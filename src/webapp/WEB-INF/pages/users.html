@@ -4,16 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+
 </head>
 <body>
-<div>
-  <th:block th:each="user : ${users}">
-    <h1 th:text="${user}"></h1>
-  </th:block>
-</div>
+
+<h2>Users</h2>
+<tr><th>Name</th><th>Surname</th></th></tr>
+  <div th:each="user : ${users}">
+    <table>
+         <td> <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}"></a></td>
+         <td> <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getSurname()}"></a></td>
+
+    </table>
+  </div>
+
 <br>
-<br>
-<a href="users">users</a>
+<input type="button" value="Add" onclick="window.location.href='/users/addNewUser'">
 
 </body>
 </html>
