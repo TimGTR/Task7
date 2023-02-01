@@ -41,7 +41,8 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public void delete(Long id) {
-        entityManager.remove(id);
+        User user = show(id);
+        entityManager.remove(user);
     }
 
 
