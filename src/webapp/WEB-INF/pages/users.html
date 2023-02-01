@@ -9,14 +9,25 @@
 <body>
 
 <h2>Users</h2>
-<tr><th>Name</th><th>Surname</th></th></tr>
+<table border="1" cellpadding="5">
+<tr>
+    <th>Name</th>
+    <th>Surname</th></th>
+    <th>Action</th>
+</tr>
   <div th:each="user : ${users}">
-    <table>
+   <tr>
          <td> <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}"></a></td>
          <td> <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getSurname()}"></a></td>
+         <td>
+            <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
 
-    </table>
+            <a th:href="@{/users/{id}/delete(id=${user.getId()})}">Delete</a>
+        </td>
+   </tr>
+
   </div>
+</table>
 
 <br>
 <input type="button" value="Add" onclick="window.location.href='/users/addNewUser'">

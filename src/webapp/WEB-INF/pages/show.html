@@ -5,8 +5,11 @@
     <title>User</title>
 </head>
 <body>
-<p th:text="${user.getId()}">Value</p>
-<p th:text="${user.getName()}">Value</p>
-<p th:text="${user.getSurname()}">Value</p>
+Id: <p th:text="${user.getId()}">Value</p>
+Name: <p th:text="${user.getName()}">Value</p>
+Surname: <p th:text="${user.getSurname()}">Value</p>
+
+<a href="http://localhost:8080/users/">Users</a>
+
 </body>
 </html>
